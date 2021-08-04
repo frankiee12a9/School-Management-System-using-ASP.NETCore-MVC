@@ -1,0 +1,9 @@
+C:\Users\PC_1\source\repos\KLAS_MVC\Helper\bin\Debug\netcoreapp3.1\Helper.deps.json
+C:\Users\PC_1\source\repos\KLAS_MVC\Helper\bin\Debug\netcoreapp3.1\Helper.dll
+C:\Users\PC_1\source\repos\KLAS_MVC\Helper\bin\Debug\netcoreapp3.1\Helper.pdb
+C:\Users\PC_1\source\repos\KLAS_MVC\Helper\obj\Debug\netcoreapp3.1\Helper.csproj.AssemblyReference.cache
+C:\Users\PC_1\source\repos\KLAS_MVC\Helper\obj\Debug\netcoreapp3.1\Helper.AssemblyInfoInputs.cache
+C:\Users\PC_1\source\repos\KLAS_MVC\Helper\obj\Debug\netcoreapp3.1\Helper.AssemblyInfo.cs
+C:\Users\PC_1\source\repos\KLAS_MVC\Helper\obj\Debug\netcoreapp3.1\Helper.csproj.CoreCompileInputs.cache
+C:\Users\PC_1\source\repos\KLAS_MVC\Helper\obj\Debug\netcoreapp3.1\Helper.dll
+C:\Users\PC_1\source\repos\KLAS_MVC\Helper\obj\Debug\netcoreapp3.1\Helper.pdb

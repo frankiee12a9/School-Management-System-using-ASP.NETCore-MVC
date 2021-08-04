@@ -1,0 +1,36 @@
+﻿@model CourseFileUpload
+@{
+	ViewData["Title"] = "File Detail";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h5>Note Detail</h5>
+<p>@ViewBag.Message</p>
+
+<div class="card p-5">
+	<h4>File Detail</h4>
+	<div class="card-header">
+		<h5>
+			@Model.Description
+		</h5><br />
+		<form class="form-inline">
+			<div>
+				File: <a class="nav-link" asp-controller="CourseFileUpload" asp-action="DownloadNoteFromDB" asp-route-Id="@Model.Id">@Model.Name</a>
+				Time stamp: <small>@Model.CreatedOn</small>
+			</div>
+		</form>
+	</div>
+	<div class="card-body">
+		<p>
+			@Model.Description
+		</p>
+	</div>
+	<div class="card-footer">
+		<a type="button" class="btn btn-primary" asp-controller="CourseFileUpload" asp-action="DownloadNoteFromDB"
+		   asp-route-Id="@Model.Id">Download</a>
+		<a type="button" class="btn btn-info" asp-controller="CourseFileUpload" asp-action="EditNote"
+		   asp-route-Id="@Model.Id">Edit</a>
+		<a type="button" class="btn btn-danger" asp-controller="CourseFileUpload" asp-action="DeleteNoteFromDB"
+		   asp-route-Id="@Model.Id">Delete</a>
+	</div>
+</div>

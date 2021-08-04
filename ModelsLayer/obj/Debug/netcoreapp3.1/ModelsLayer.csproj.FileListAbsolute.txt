@@ -1,0 +1,9 @@
+C:\Users\PC_1\source\repos\KLAS_MVC\ModelsLayer\bin\Debug\netcoreapp3.1\ModelsLayer.deps.json
+C:\Users\PC_1\source\repos\KLAS_MVC\ModelsLayer\bin\Debug\netcoreapp3.1\ModelsLayer.dll
+C:\Users\PC_1\source\repos\KLAS_MVC\ModelsLayer\bin\Debug\netcoreapp3.1\ModelsLayer.pdb
+C:\Users\PC_1\source\repos\KLAS_MVC\ModelsLayer\obj\Debug\netcoreapp3.1\ModelsLayer.AssemblyInfoInputs.cache
+C:\Users\PC_1\source\repos\KLAS_MVC\ModelsLayer\obj\Debug\netcoreapp3.1\ModelsLayer.AssemblyInfo.cs
+C:\Users\PC_1\source\repos\KLAS_MVC\ModelsLayer\obj\Debug\netcoreapp3.1\ModelsLayer.csproj.CoreCompileInputs.cache
+C:\Users\PC_1\source\repos\KLAS_MVC\ModelsLayer\obj\Debug\netcoreapp3.1\ModelsLayer.dll
+C:\Users\PC_1\source\repos\KLAS_MVC\ModelsLayer\obj\Debug\netcoreapp3.1\ModelsLayer.pdb
+C:\Users\PC_1\source\repos\klas_mvc\ModelsLayer\obj\Debug\netcoreapp3.1\ModelsLayer.csproj.AssemblyReference.cache

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Department>
+@{
+	ViewData["Title"] = "Role Manager";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br>
+<div class="container">
+	<div class="row mb-4">
+		<div class="col-6">
+			<h2 class="text-info">Departments List</h2>
+		</div>
+		<div class="col-4 offset-2 text-right">
+			<a asp-area="Admin" asp-controller="Department" asp-action="Create" class="btn btn-info">
+				<i class="fas fa-plus">&nbsp; Create new Department</i>
+			</a>
+		</div>
+	</div>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Department ID</th>
+				<th>Department Name</th>
+			</tr>
+		</thead>
+		<tbody>
+			@foreach (var department in Model)
+			{
+				<tr>
+					<td><a>@department.DepartmentID</a></td>
+					<td><a class="nav-link" asp-controller="Department" asp-action="Detail"
+						asp-route-id="@department.DepartmentID">@department.DepartmentName</a></td>
+				</tr>
+			}
+		</tbody>
+	</table>
+</div>

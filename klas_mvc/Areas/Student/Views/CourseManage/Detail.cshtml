@@ -1,0 +1,161 @@
+﻿@model Course
+@{
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<br />
+<div class="container text-center">
+	<div class="card">
+		<div class="card-header bg-gradient ml-0 row container">
+			<div class="form-inline row container">
+				<div class="col-12 d-none d-md-block col-md-4 p-2 text-left">
+					<h3 class="text-primary">
+						&nbsp; Course Detail
+					</h3>
+				</div>
+				<div class="col-12 col-md-4 offset-md-4 text-right">
+					<a asp-action="Index" class="btn btn-outline-info">Back to Courses List</a>
+				</div>
+			</div>
+		</div>
+		<div class="card-body">
+			<table class="table table-striped border">
+				<tbody>
+					<tr>
+						<th scope="row">Course Name</th>
+						<td colspan="5">@Model.CourseName</td>
+						<th scope="row">Course Credit</th>
+						<td>@Model.CourseCredit</td>
+					</tr>
+					<tr>
+						<th scope="row">Course ID</th>
+						<td colspan="5">@Model.CourseId</td>
+						<th scope="row">Course Type</th>
+						<td>@Model.CourseType</td>
+					</tr>
+					<tr>
+						<th scope="row">Course Schedule</th>
+						<td colspan="5">@Model.ClassPlace1/@Model.ClassTime1 || @Model.ClassPlace2 / @Model.ClassTime2
+						</td>
+						<th scope="row">Course Enrollments</th>
+						<td>
+							<a class="btn btn-outline-info" asp-action="GetEnrollemnts">@Model.Enrollments.Count</a>
+						</td>
+					</tr>
+					@{
+						int count = 1;
+						@foreach (var courseAsisngment in Model.CourseAssignments)
+						{
+							<tr>
+								<th scope="row">Lecturers @count</th>
+								<td colspan="5">@courseAsisngment.Lecturer.UserName</td>
+								<th scope="row">Lecturer Type</th>
+								<td>@courseAsisngment.Lecturer.UserType</td>
+							</tr>
+
+							count += 1;
+						}
+					}
+					<tr>
+						<th scope="row">Department</th>
+						<td colspan="10">@Model.Department.DepartmentName</td>
+					</tr>
+					<tr>
+						<th scope="row">Course Description</th>
+						<td colspan="10">@Model.CourseDescription</td>
+					</tr>
+				</tbody>
+			</table>
+			<hr />
+			<div class="col-12 d-none d-md-block col-md-4 p-2 text-left mt-2">
+				<h5 class="text-primary">Course Schedule</h5>
+			</div>
+			<table class="table table-striped mt-4">
+				<thead>
+					<tr>
+						<th colspan="1">Week</th>
+						<th colspan="6">Lecture Content</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td colspan="4">@Model.Week1</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th scope="row"> 2</th>
+						<td colspan="4">@Model.Week2</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th scope="row"> 3</th>
+						<td colspan="4">@Model.Week3</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th scope="row"> 4</th>
+						<td colspan="4">@Model.Week4</td>
+						<td></td>
+					<tr>
+						<th scope="row"> 5</th>
+						<td colspan="4">@Model.Week5</td>
+						<td></td>
+					<tr>
+						<th scope="row"> 6</th>
+						<td colspan="4">@Model.Week6</td>
+						<td></td>
+					<tr>
+						<th scope="row"> 7</th>
+						<td colspan="4">@Model.Week7</td>
+						<td></td>
+					<tr>
+						<th scope="row"> 8</th>
+						<td colspan="4">@Model.Week8</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th scope="row"> 9</th>
+						<td colspan="4">@Model.Week9</td>
+						<td></td>
+					</tr>
+					<tr>
+						<th scope="row"> 10</th>
+						<td colspan="4">@Model.Week10</td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="card-footer">
+			<form method="post" asp-controller="CourseManage">
+				<div class="form-row">
+					@if (User.IsInRole("Lecturer") || (User.IsInRole("Admin")))
+					{
+						<div class="row">
+							<div class="col">
+								<a asp-action="Edit" asp-route-id="@Model.CourseId" class="btn btn-info form-control">Edit
+									Lecture</a>
+							</div>
+							<div class="col text-right">
+								<input type="submit" asp-action="Delete" asp-route-id="@Model.CourseId"
+								class="btn btn-danger form-control" value="Delete Course" />
+							</div>
+						</div>
+					}
+					else
+					{
+						<div class="row">
+							<div class="col">
+								<a asp-action="CourseReview" asp-route-id="@Model.CourseId"
+								class="btn btn-primary form-control">Course Review</a>
+							</div>
+						</div>
+					}
+				</div>
+			</form>
+
+		</div>
+	</div>
+</div>

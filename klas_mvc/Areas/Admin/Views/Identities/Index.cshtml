@@ -1,0 +1,79 @@
+@model IEnumerable<AppUser>
+@inject UserManager<AppUser> UserManager
+@{
+
+}
+
+<br />
+<div class="container">
+    <div class="row mb-4">
+        <div class="col-6">
+            <h2 class="text-info">Identities List</h2>
+        </div>
+        <div class="col-4 offset-2 text-right">
+            <a asp-area="Admin" asp-controller="Account" asp-action="Register" class="btn btn-info">
+                <i class="fas fa-plus">&nbsp; Create new identity</i>
+            </a>
+        </div>
+    </div>
+    @if (Model.Count() > 0)
+    {
+        <div class="row">
+            <div class="col-12 text-center">
+                <table class="table table-striped border">
+                    <thead>
+                        <tr class="">
+                            <td>ID</td>
+                            <td>Name</td>
+                            <td>Role</td>
+                        </tr>
+                    </thead>
+                    @foreach (var identity in Model)
+                    {
+                        <tbody>
+                            <tr>
+                                <td>@identity.Id</td>
+                                <td>
+                                    <a class="nav-link" asp-controller="Identities" asp-action="Edit"
+                                asp-route-id="@identity.Id">
+                                        @identity.UserName
+                                    </a>
+                                </td>
+                                @{
+                                    var roles = await UserManager.GetRolesAsync(identity);
+                                }
+                                @foreach (var role in roles)
+                                {
+                                    <td>
+                                        <a class="nav-link" asp-controller="Identites" asp-action="EditRole"
+                                asp-route-id="@identity.Id">
+                                            @role
+                                        </a>
+                                    </td>
+                                }
+                                <td>
+                                    @if (identity.LockoutEnd == null || identity.LockoutEnd < DateTime.Now)
+                                    {
+                                        <a class="btn btn-primary text-white" asp-action="LockUser" asp-route-id="@identity.Id">
+                                            <i class="fas fa-lock-open">&nbsp; Lock</i>
+                                        </a>
+                                    }
+                                    else
+                                    {
+                                        <a class="btn btn-warning text-white" asp-action="UnlockUser" asp-route-id="@identity.Id">
+                                            <i class="fas fa-lock">&nbsp; Unlock</i>
+                                        </a>
+                                    }
+                                </td>
+                            </tr>
+                        </tbody>
+                    }
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <strong>Identity list is empty</strong>
+    }
+</div>

@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Data\Migrations\20210731010659_addDepartmentModel.cs" />
+    <Compile Remove="Data\Migrations\20210731010659_addDepartmentModel.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210731012227_addDepartmentModel.cs" />
+    <Compile Remove="Data\Migrations\20210731012227_addDepartmentModel.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210731013207_addDepartmentModel.cs" />
+    <Compile Remove="Data\Migrations\20210731013207_addDepartmentModel.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210731013717_addDepartmentModel.cs" />
+    <Compile Remove="Data\Migrations\20210731013717_addDepartmentModel.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210731014338_addDepartmentModel.cs" />
+    <Compile Remove="Data\Migrations\20210731014338_addDepartmentModel.Designer.cs" />
+    <Compile Remove="Data\Migrations\20210731014810_addDepartmentModel.cs" />
+    <Compile Remove="Data\Migrations\20210731014810_addDepartmentModel.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.15" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.15" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.15" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ModelsLayer\ModelsLayer.csproj" />
+  </ItemGroup>
+
+</Project>
